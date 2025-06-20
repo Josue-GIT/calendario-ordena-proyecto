@@ -1,0 +1,40 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--mat-sys-primary);
+    background-color: var(--mat-sys-primary-container);
+  
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // Distribuye el logo a la izquierda y los links a la derecha
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 16px;
+      margin: 0 auto; // Centra el contenido del navbar
+    }
+  
+    .logo {
+      font-weight: 500;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }
+  
+    .nav-links a {
+      margin-left: 16px;
+      font-weight: 500;
+      color: black !important;
+      text-decoration: none;
+  
+      &:hover {
+        color: #3f51b5;
+      }
+    }
+  }
+  
