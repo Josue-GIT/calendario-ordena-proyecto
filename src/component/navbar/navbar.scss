@@ -1,40 +1,58 @@
 .navbar {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--mat-sys-primary);
+  background-color: var(--mat-sys-primary-container);
+  z-index: 1000;
+
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Distribuye el logo a la izquierda y los links a la derecha
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto; // Centra el contenido del navbar
+  }
+
+  .logo {
+    font-weight: 500;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .nav-links a {
+    position: relative; // Necesario para posicionar el pseudo-elemento
+    margin-left: 16px;
+    font-weight: 500;
     color: var(--mat-sys-primary);
-    background-color: var(--mat-sys-primary-container);
+    text-decoration: none;
+    transition: color 0.3s ease; // Transición suave para el color
+    cursor: pointer;
   
-    .navbar-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; // Distribuye el logo a la izquierda y los links a la derecha
-      width: 100%;
-      max-width: 1200px;
-      padding: 0 16px;
-      margin: 0 auto; // Centra el contenido del navbar
+    &:hover {
+      color: white; // Cambia el color del texto al pasar el cursor
     }
   
-    .logo {
-      font-weight: 500;
-      font-size: 1.5rem;
-      cursor: pointer;
+    &::before {
+      content: ''; // Pseudo-elemento vacío
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); // Centra el pseudo-elemento
+      width: 0;
+      height: 0;
+      background-color: var(--mat-sys-secondary); // Color del fondo ovalado
+      border-radius: 50px; // Hace que sea ovalado
+      z-index: -1; // Coloca el pseudo-elemento detrás del texto
+      transition: width 0.3s ease, height 0.3s ease; // Transición suave
     }
   
-    .spacer {
-      flex: 1 1 auto;
-    }
-  
-    .nav-links a {
-      margin-left: 16px;
-      font-weight: 500;
-      color: black !important;
-      text-decoration: none;
-  
-      &:hover {
-        color: #3f51b5;
-      }
+    &:hover::before {
+      width: 120%; // Ancho del fondo ovalado al hacer hover
+      height: 2em; // Altura del fondo ovalado al hacer hover
     }
   }
-  
+}
