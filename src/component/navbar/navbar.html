@@ -1,10 +1,11 @@
 <mat-toolbar class="navbar">
   <div class="navbar-content">
-    <span class="logo">MiApp</span>
+    <span [routerLink]="'/home'" class="logo">Calendario Ordena
+    </span>
     
     <nav class="nav-links">
-      <a routerLink="/inicio">Inicio</a>
-      <a routerLink="/calendario">Calendario</a>
+      <a [routerLink]="'/home'">inicio</a>
+      <a [routerLink]="'/calendario'">Calendario</a>
     </nav>
-  </div>
+  </div>  
 </mat-toolbar>
