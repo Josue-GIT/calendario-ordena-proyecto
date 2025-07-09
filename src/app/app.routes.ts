@@ -1,17 +1,8 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { Calendario } from '../component/calendario/calendario';
+import { Home } from '../component/home/home';
 
-
-export const routes: Routes = [
-    {path:'', component: Calendario},
+export const routes = [
+  { path: '', component: Home },
+  { path: 'home', component: Home },
+  { path: 'calendario', component: Calendario },
 ];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-
-export class AppRoutingModule { 
-
-}

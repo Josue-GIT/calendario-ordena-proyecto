@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { CalendarModule } from 'angular-calendar';
 @Component({
   selector: 'app-navbar',
   imports: [MatToolbar,
-    RouterModule],
+    RouterModule,
+  CalendarModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
