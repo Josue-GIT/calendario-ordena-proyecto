@@ -1,9 +1,17 @@
+<br>
+<div class="calendar-header">
+  <button mat-button="tonal" (click)="previousMonth()">Anterior</button>
+  <button mat-button="filled" (click)="today()">Hoy</button>
+  <button mat-button="tonal" (click)="nextMonth()">Siguiente</button>
+  <h3>{{ viewDate | date: 'MMMM yyyy' }}</h3>
+</div>
+
 <div class="calendar-container">
   <mwl-calendar-month-view
     [viewDate]="viewDate"
-    [events]="events"
     [activeDayIsOpen]="true"
     [refresh]="refresh"
-    (eventTimesChanged)="eventTimesChanged($event)">
+    (dayClicked)="onDayClick($event.day.date)">
   </mwl-calendar-month-view>
 </div>
+
