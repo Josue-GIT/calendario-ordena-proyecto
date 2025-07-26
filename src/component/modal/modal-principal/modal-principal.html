@@ -1,2 +1,10 @@
+<div class="modal-content">
+  <h2 class="modal-title">Detalle de la fecha</h2>
+  <p class="modal-date">Fecha seleccionada: <strong>{{ data.fecha | date:'fullDate' }}</strong></p>
 
-holaaaaaaaaaaaaaaa
+  <div class="modal-actions">
+    <button mat-raised-button color="primary">Agregar ingreso</button>
+    <button mat-raised-button color="accent">Agregar egreso</button>
+    <button mat-raised-button color="warn">Eliminar</button>
+  </div>
+</div>
