@@ -1,0 +1,22 @@
+.modal-content {
+  max-width: 500px;
+  margin: 48px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  text-align: center;
+}
+
+.egreso-form .form-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.observacion-field {
+  min-width: 220px;
+  flex: 1;
+}

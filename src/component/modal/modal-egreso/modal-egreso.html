@@ -1,1 +1,30 @@
-<p>modal-egreso works!</p>
+<div class="modal-content">
+  <h2 class="modal-title">Agregar egreso</h2>
+   <p class="modal-date">Fecha seleccionada: <strong>{{ data.fecha | date:'fullDate' }}</strong></p>
+  <form class="egreso-form" [formGroup]="form">
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="categoria" (selectionChange)="onCategoriaChange($event.value)">
+          <mat-option value="operativos">Gastos Operativos</mat-option>
+          <mat-option value="financieros">Gastos Financieros</mat-option>
+          <mat-option value="administrativos">Gastos Administrativos</mat-option>
+          <mat-option value="extraordinarios">Gastos Extraordinarios</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Subcategoría</mat-label>
+        <mat-select formControlName="subcategoria" [disabled]="!form.get('categoria')?.value">
+          <mat-option *ngFor="let sub of subcategorias" [value]="sub">{{ sub }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="observacion-field">
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" placeholder="Descripción del ingreso">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Agregar</button>
+  </form>
+</div>
