@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalPrincipal } from '../modal/modal-principal/modal-principal';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export const colors: any = {
   red: {
@@ -46,7 +47,9 @@ export const colors: any = {
     CommonModule,
     DatePipe,
     MatButtonModule, 
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
      // Asegurarse de importar DatePipe
   ],
   templateUrl: './calendario.html',
@@ -56,9 +59,7 @@ export const colors: any = {
 export class Calendario {
   selectedDate: Date | null = null;
   constructor(
-    private sanitizer: DomSanitizer,
     private dialog: MatDialog) { 
-      
     }
   modalAbierto: boolean = false;
   snapDraggedEvents = true;
@@ -75,7 +76,7 @@ export class Calendario {
   dialogRef.afterClosed().subscribe(result => {
     console.log('El modal principal se cerró');
   });
-}
+  }
 
   setView(view: CalendarView) {
     this.view = view;

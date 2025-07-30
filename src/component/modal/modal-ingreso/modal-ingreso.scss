@@ -1,0 +1,54 @@
+.modal-content {
+  max-width: 500px;
+  margin: 48px auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  text-align: center;
+}
+
+.card {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.card-header {
+  background: transparent;
+  border-bottom: none;
+  margin-bottom: 16px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.form-control, textarea.form-control {
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.btn {
+  min-width: 120px;
+  margin-top: 16px;
+}
+
+.ingreso-form .form-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.observacion-field {
+  min-width: 220px;
+  flex: 1;
+}
